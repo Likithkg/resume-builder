@@ -1,0 +1,36 @@
+{
+  "Languages": [
+    "Python",
+    "SQL"
+  ],
+  "Backend": [
+    "Flask",
+    "FastAPI",
+    "Node.js",
+    "REST APIs",
+    "Microservices"
+  ],
+  "Data Processing": [
+    "PyArrow",
+    "fastavro",
+    "Avro",
+    "Parquet",
+    "Chunked Processing",
+    "Asynchronous Processing",
+    "Batch Ingestion"
+  ],
+  "Databases / Search": [
+    "PostgreSQL",
+    "Elasticsearch"
+  ],
+  "AI / LLM": [
+    "LLM Agents",
+    "AI Skill Engineering",
+    "Agentic Workflows"
+  ],
+  "Containers / Infrastructure": [
+    "Docker",
+    "Linux",
+    "Git"
+  ]
+}

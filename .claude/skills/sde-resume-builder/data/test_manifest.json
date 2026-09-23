@@ -1,0 +1,67 @@
+{
+  "header": {
+    "name": "Likith K G",
+    "email": "likithbopanna222@gmail.com",
+    "phone": "+91-9900631076",
+    "location": "Bengaluru, India",
+    "github": "https://github.com/likithkg",
+    "linkedin": "https://www.linkedin.com/in/likith-kg-4b6986268",
+    "summary": "Software Development Engineer with 2+ years of experience in backend development, data processing, and AI/LLM automation. Strong expertise in Python, Flask, Node.js, microservices, and scalable data pipelines."
+  },
+  "education": [
+    {
+      "institution": "Shree Devi Institute of Technology",
+      "start_date": "2020",
+      "end_date": "2024",
+      "degree": "Bachelor of Engineering in Information Science and Engineering",
+      "location": "Mangalore, Karnataka, India"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Tata Consultancy Services (TCS)",
+      "start_date": "August 2024",
+      "end_date": "Present",
+      "role": "Software Engineer",
+      "location": "Bengaluru, India",
+      "bullet_points": [
+        "Built Python/Flask and Node.js microservices to process Avro/Parquet data and load transformed results into PostgreSQL and Elasticsearch via REST APIs.",
+        "Redesigned a 2–3 GB data processing workflow to eliminate intermediate CSV disk I/O, using PyArrow, fastavro, and chunked/asynchronous processing to meet a ~2-minute processing window.",
+        "Translated infrastructure troubleshooting SOPs into structured AI skill instructions by decomposing procedures and iteratively testing workflows against real-world incidents."
+      ]
+    }
+  ],
+  "skills": {
+    "Languages": ["Python", "SQL"],
+    "Backend": ["Flask", "Node.js", "REST APIs", "Microservices"],
+    "Data Processing": ["Avro", "Parquet", "PyArrow", "fastavro", "Chunked Processing", "Asynchronous Processing", "Batch Ingestion"],
+    "Databases / Search": ["PostgreSQL", "Elasticsearch"],
+    "AI / LLM": ["LLM Agents", "AI Skill Engineering", "Agentic Workflows"],
+    "Containers / Infrastructure": ["Docker", "Linux", "Git"]
+  },
+  "projects": [
+    {
+      "name": "Cloud Service Observability & Monitoring Platform",
+      "technologies": ["FastAPI", "PostgreSQL", "Docker", "AWS CloudWatch"],
+      "bullet_points": [
+        "Designed an event-driven architecture using Server-Sent Events (SSE) for real-time cross-cloud resource monitoring.",
+        "Implemented JWT-based role-based access control (RBAC) to secure sensitive monitoring data.",
+        "Containerized the application suite using Docker for consistent deployment across environments."
+      ]
+    },
+    {
+      "name": "Heart Disease Prediction System — ML Backend",
+      "technologies": ["Python", "Flask", "Scikit-learn", "Pandas"],
+      "bullet_points": [
+        "Developed a REST API backend to serve ML inference for heart disease prediction.",
+        "Built an end-to-end pipeline covering data preprocessing, model training, and inference evaluation using precision-recall metrics."
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "2nd Place — TCS AI Hackathon",
+      "issuer": "TCS"
+    }
+  ]
+}

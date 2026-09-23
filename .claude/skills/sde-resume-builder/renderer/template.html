@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume - {{ header.name }}</title>
+</head>
+<body>
+    <div class="resume-container">
+        <header>
+            <div class="name">{{ header.name }}</div>
+            <div class="contact-info">
+                {% if header.location %}{{ header.location }}{% endif %}
+                {% if header.phone %} | {{ header.phone }}{% endif %}
+                {% if header.email %} | {{ header.email }}{% endif %}
+                {% if header.github %} | <a href="{{ header.github }}">GitHub</a>{% endif %}
+                {% if header.linkedin %} | <a href="{{ header.linkedin }}">LinkedIn</a>{% endif %}
+            </div>
+        </header>
+
+        {% if header.summary %}
+        <section class="section">
+            <div class="section-title">OBJECTIVE</div>
+            <div class="summary-text">{{ header.summary }}</div>
+        </section>
+        {% endif %}
+
+        <section class="section">
+            <div class="section-title">EDUCATION</div>
+            {% for edu in education %}
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="institution">{{ edu.institution }}</span>
+                    <span class="date">{{ edu.start_date }} &ndash; {{ edu.end_date }}</span>
+                </div>
+                <div class="entry-sub-header">
+                    <span class="degree">{{ edu.degree }}</span>
+                    <span class="location">{{ edu.location }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+
+        <section class="section">
+            <div class="section-title">EXPERIENCE</div>
+            {% for exp in experience %}
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">{{ exp.company }}</span>
+                    <span class="date">{{ exp.start_date }} &ndash; {{ exp.end_date }}</span>
+                </div>
+                <div class="entry-sub-header">
+                    <span class="role">{{ exp.role }}</span>
+                    <span class="location">{{ exp.location }}</span>
+                </div>
+                <ul class="bullet-points">
+                    {% for bullet in exp.bullet_points %}
+                    <li>{{ bullet }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </section>
+
+        <section class="section">
+            <div class="section-title">SKILLS / TOOLS</div>
+            <div class="skills-grid">
+                {% for category, skills in skills.items() %}
+                <div class="skill-category">
+                    <strong>{{ category }}:</strong> {{ skills | join(", ") }}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        {% if projects %}
+        <section class="section">
+            <div class="section-title">PROJECTS</div>
+            {% for project in projects %}
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="project-title">{{ project.name }}</span>
+                </div>
+                <div class="entry-sub-header">
+                    <span class="project-meta">{{ project.technologies | join(", ") }}</span>
+                </div>
+                <ul class="bullet-points">
+                    {% for bullet in project.bullet_points %}
+                    <li>{{ bullet }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </section>
+        {% endif %}
+
+        {% if awards %}
+        <section class="section">
+            <div class="section-title">ACHIEVEMENT</div>
+            <div class="achievement-text">
+                {% for award in awards %}
+                {{ award.title }} &ndash; {{ award.issuer }}
+                {% if not loop.last %}<br>{% endif %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+    </div>
+</body>
+</html>

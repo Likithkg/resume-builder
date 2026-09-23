@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------------------
+# SDE Resume Builder — .gitignore
+#
+# Track: source code (tools/, .claude/skills), reference templates (references/),
+# README, and project metadata.
+#
+# Ignore: regenerated artifacts, Python bytecode, personal/scratch folders.
+# ---------------------------------------------------------------------------
+
+# --- Regenerated output artifacts ----------------------------------------
+# The output/ directory holds generated PDF/DOCX/manifest files that are
+# produced by the renderer and can be rebuilt from the content manifest.
+/output/
+
+# --- Python bytecode ------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+
+# --- Trash / scratch ------------------------------------------------------
+.trash/
+
+# --- Generated reference-format folders ----------------------------------
+# tools/scan.py regenerates these from references/*.pdf (one shot).
+# Keep the PDFs as the source of truth; the format folders below are outputs.
+references/*/
+
+# --- Claude Code: personal / local state ----------------------------------
+# Local settings contain per-machine permission allow-lists; not for a repo.
+.claude/settings.local.json
+
+# --- OS / editor cruft ----------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
