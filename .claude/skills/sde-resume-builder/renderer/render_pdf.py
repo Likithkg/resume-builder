@@ -2,7 +2,7 @@
 PDF + DOCX renderers.
 
 The PDF path populates the locked template.html/styles.css. The DOCX path mirrors the
-verified output/Likith_Resume.docx layout (⋄ contacts, · bullets, 5-section loop).
+verified output/Candidate_Resume.docx layout (⋄ contacts, · bullets, 5-section loop).
 This module is the single canonical writer for both artifacts.
 """
 import logging

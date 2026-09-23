@@ -1,11 +1,11 @@
 {
   "header": {
-    "name": "Likith K G",
-    "email": "likithbopanna222@gmail.com",
-    "phone": "+91-9900631076",
-    "location": "Bengaluru, India",
-    "github": "https://github.com/likithkg",
-    "linkedin": "https://www.linkedin.com/in/likith-kg-4b6986268",
+    "name": "Jordan Developer",
+    "email": "jordan.developer@example.com",
+    "phone": "+1-555-0100",
+    "location": "Bangalore, Karnataka, India",
+    "github": "https://github.com/jordan-demo",
+    "linkedin": "https://www.linkedin.com/in/jordan-demo",
     "summary": "Software Development Engineer with 2+ years of experience in backend development, data processing, and AI/LLM automation. Strong expertise in Python, Flask, Node.js, microservices, and scalable data pipelines."
   },
   "education": [
@@ -19,7 +19,7 @@
   ],
   "experience": [
     {
-      "company": "Tata Consultancy Services (TCS)",
+      "company": "[Employer Name]",
       "start_date": "August 2024",
       "end_date": "Present",
       "role": "Software Engineer",

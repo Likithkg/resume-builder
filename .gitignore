@@ -24,6 +24,12 @@ env/
 # --- Trash / scratch ------------------------------------------------------
 .trash/
 
+# --- Personal data (the real candidate profile + real test manifest) --------
+# personal/ holds the real, personal candidate data and must NOT be committed.
+# The working tree instead ships de-identified placeholder files so the skill
+# runs out of the box without publishing anyone's facts. See README.
+personal/
+
 # --- Generated reference-format folders ----------------------------------
 # tools/scan.py regenerates these from references/*.pdf (one shot).
 # Keep the PDFs as the source of truth; the format folders below are outputs.

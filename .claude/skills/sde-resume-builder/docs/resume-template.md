@@ -65,7 +65,7 @@ Reference characteristics:
 
 For the generated resume:
 
-**LIKITH K G**
+**[Candidate Name]**
 
 should occupy the same visual role.
 
@@ -85,7 +85,7 @@ Characteristics:
 * Black
 * Compact spacing below the name
 * Contact elements appear on a single line where possible
-* A small diamond separator is used between contact elements
+* A small pipe separator is used between contact elements
 
 Reference structure:
 
@@ -351,7 +351,7 @@ For the candidate's experience:
 
 ```text
 Software Engineer                                   August 2024 – Present
-Tata Consultancy Services (TCS), Bengaluru, India
+[Employer], [Location]
 ```
 
 The exact ordering should be adapted to the candidate's information while preserving the reference's visual alignment.

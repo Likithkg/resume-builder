@@ -143,8 +143,73 @@ The chosen format name is used only at render time: `engine/main.py --format "<n
 
 ### Inputs
 
-- **Candidate Profile** — JSON (or a path to one) with the candidate's full history. Schema in `data/candidate-schema.json`.
-- **Job Description** — the text of the target role you are tailoring for.
+Two things are required to generate a resume. The first is authoritative; the second controls
+emphasis only.
+
+- **Candidate Profile** — the human facts of the person. Written as a Markdown document in
+  `docs/`, with its JSON structure defined in `data/candidate-schema.json`.
+- **Job Description** — the text of the target role you are tailoring for. The JD is
+  *relevance, not facts*: it decides which of your verified facts get emphasized, but it can
+  never add a fact you don't have.
+
+#### The Candidate Profile — how to prepare one
+
+The profile is the **authoritative factual source** for the whole pipeline. Read the four
+`docs/` files together to understand how they fit, but the profile below carries the facts:
+
+| File | What it is | Edit? |
+|------|-----------|-------|
+| `docs/candidate-profile.md` | **Authoritative candidate facts.** The only source for who the candidate is. | No — input only |
+| `docs/career-positioning.md` | How to position and emphasize the candidate's story. | No — input only |
+| `docs/resume-guidelines.md` | Writing & ATS rules (bullet formula, verbs, missing-skill handling). | No — input only |
+| `docs/resume-template.md` | The locked one-page visual template contract. | No — input only |
+
+The profile (`docs/candidate-profile.md`) is the human-facing source of truth. It answers five
+questions: **who you are**, **where you've worked**, **what you built**, **what you can do**, and
+**what you've won**. Concretely, fill in these sections:
+
+1. **Identity** — full name, professional email, phone, current location, target role, and links
+   (LinkedIn, GitHub, portfolio). Put anything you can't yet verify on its own **"Verified Metrics /
+   unverified items"** list (see below) instead of inventing it.
+2. **Target positioning** — the role you're applying for (e.g. *Software Development Engineer*) and
+   the one-paragraph story that ties your experience together.
+3. **Work experience** — for each role: company, position, start–end dates, location, and 3–6
+   bullet points describing *verifiable* accomplishments. Prefer concrete engineering work: the
+   problem, the approach, the technologies, and any verified result.
+4. **Education** — institution, degree, major, and graduation date.
+5. **Skills** — grouped by category (Languages, Backend, Data, Databases, etc.). This is the honest
+   inventory of what you actually use — not aspirational.
+6. **Projects** *(optional)* — personal/open-source work: title, tech stack, link, and verifiable
+   outcomes.
+7. **Achievements** *(optional)* — awards, certifications, hackathons, publications.
+
+##### What the profile must *contain* vs *avoid*
+
+**Contain (verified facts):**
+- Real, specific technologies you have genuinely used.
+- Concrete outcomes with **verified** numbers (data volumes, processing windows, latency — only if
+  you actually measured it).
+- Projects you have personally built and can defend in an interview.
+
+**Avoid (unsupported claims):**
+- Tech or tools you've only *heard of* or briefly touched.
+- Metrics, scale, leadership titles, or business impact you didn't actually deliver.
+- Anything from a *job description* you're applying to — a JD keyword is **not** a qualification.
+- Fabricated dates, degrees, employers, or certifications.
+
+A simple rule of thumb: **if you wouldn't confidently defend it in a technical interview, leave it
+out.** A shorter, truthful resume outperforms a longer, unverifiable one — and any resume built on
+unsupported claims is worse than none.
+
+##### How to keep it clean
+
+- **Be factual, not marketing.** Lead with what you did and how you did it.
+- **Keep it factual and dated.** Recents first; every entry has clear start–end dates.
+- **Don't overclaim seniority** or team size you weren't part of.
+- **One section per area** — don't repeat the same accomplishment in multiple places.
+
+> The `docs/` files are treated as **read-only** by the pipeline. Write them once, carefully, and
+> the engine never invents, paraphrases-for-impressiveness, or fills gaps beyond them.
 
 ---
 
@@ -227,5 +292,5 @@ python3 .claude/skills/sde-resume-builder/engine/main.py \
     --out output
 
 # Open the results
-xdg-open output/Likith_K_G_Resume.pdf
+xdg-open output/Candidate_Resume.pdf
 ```
