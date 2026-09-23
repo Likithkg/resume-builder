@@ -12,21 +12,21 @@ The system is split into two halves:
 ## Architecture
 
 ```
-┌───────────────────────────────────────────────────────────────────────┐
-│  Claude Code main agent (SKILL.md)  — orchestrates the pipeline         │
-│                                                                        │
-│   ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐              │
-│   │  analysis│─▶│  mapping │─▶│  content │─▶│    ats   │  feedback     │
-│   │  (A/B/C/D)│  │  A>B>C   │  │  manifest │  │  review  │◀── loops back │
-│   └──────────┘  └──────────┘  └──────────┘  └──────────┘   to content  │
-│                    ▲                                   │                │
-│                    └───────────  content re-run ────────┘                │
-│                                                                        │
-│   ┌───────────────┐   ┌───────────────────────────────────────────┐    │
-│   │  compress     │──▶│  renderer/  (main.py → render_pdf.py)       │    │
-│   │  (one page)   │   │   validate.py → output/*.pdf  + *.docx      │    │
-│   └───────────────┘   └───────────────────────────────────────────┘    │
-└───────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Claude Code main agent (SKILL.md)  — orchestrates the pipeline             │
+│                                                                             │
+│   ┌───────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐                │
+│   │  analysis │─▶│  mapping │─▶│  content │─▶│    ats   │     feedback   │
+│   │  (A/B/C/D)│   │  A>B>C   │   │  manifest│   │  review  │◀── loops back │
+│   └───────────┘   └──────────┘   └──────────┘   └──────────┘     to content │
+│                    ▲                                    │                   │
+│                    └───────────  content re-run ────────┘                   │
+│                                                                             │
+│   ┌───────────────┐    ┌───────────────────────────────────────────┐        │
+│   │  compress     │──▶│  renderer/  (main.py → render_pdf.py)     │        │
+│   │  (one page)   │    │   validate.py → output/*.pdf  + *.docx    │        │
+│   └───────────────┘    └───────────────────────────────────────────┘        │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 **Why sub-agents per stage?** Each stage has a different kind of thinking. Analysis (classifying requirements), mapping (matching evidence with an A > B > C priority), and content (writing truthful bullets) are judgment-heavy and want a strong model. The ATS reviewer is a check-and-feedback loop. The renderer is pure Python and never needs a model at all. The main agent picks the model per stage from whatever you set in the terminal.
